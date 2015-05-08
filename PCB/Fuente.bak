@@ -330,7 +330,7 @@ F 3 "~" H 19200 3650 60  0000 C CNN
 	1    19200 3650
 	1    0    0    -1  
 $EndComp
-Text GLabel 18300 1850 0    60   Input ~ 0
+Text GLabel 17750 1850 0    60   Input ~ 0
 SR_Input
 $Comp
 L +5V #PWR102
@@ -373,7 +373,6 @@ Text GLabel 20225 3425 2    60   Output ~ 0
 11
 Text GLabel 20225 3550 2    60   Output ~ 0
 12
-NoConn ~ 19900 4100
 Text Notes 17250 1300 0    120  Italic 24
 Shift register
 $Comp
@@ -2605,17 +2604,9 @@ F 3 "" H 5200 9300 60  0000 C CNN
 	1    5200 9300
 	-1   0    0    -1  
 $EndComp
-Text GLabel 5800 9000 1    60   BiDi ~ 0
-I2C_SCL
-Text GLabel 6100 9000 1    60   BiDi ~ 0
-I2C_SDA
 Text GLabel 1900 9600 0    60   Input ~ 0
 D2
 Text GLabel 1900 9750 0    60   Input ~ 0
-D3
-Text GLabel 6100 9600 3    60   Input ~ 0
-D2
-Text GLabel 5800 9600 3    60   Input ~ 0
 D3
 $Comp
 L JUMPER JP5
@@ -3917,52 +3908,47 @@ SS_1
 Text Label 4700 11250 2    60   ~ 0
 SS_2
 NoConn ~ 6900 10650
-Text GLabel 5400 10000 0    60   BiDi ~ 0
-I2C_SCL
-Text GLabel 5400 10200 0    60   BiDi ~ 0
-I2C_SDA
+Text GLabel 5800 9600 3    60   Input ~ 0
+SR_OE
+Text GLabel 6100 9600 3    60   Input ~ 0
+SR_LCLK
+Text GLabel 5800 9000 1    60   Input ~ 0
+SR_CLK
+Wire Wire Line
+	19900 4100 20000 4100
+Wire Wire Line
+	20000 4100 20000 4350
+Wire Wire Line
+	20000 4350 19950 4350
+Text GLabel 19950 4350 0    60   Input ~ 0
+SR_OUTPUT
 $Comp
-L R R20
-U 1 1 554BA78A
-P 5750 10000
-F 0 "R20" V 5830 10000 40  0000 C CNN
-F 1 "R" V 5757 10001 40  0000 C CNN
-F 2 "~" V 5680 10000 30  0000 C CNN
-F 3 "~" H 5750 10000 30  0000 C CNN
-	1    5750 10000
+L JUMPER3 JP?
+U 1 1 554BBA23
+P 18200 1850
+F 0 "JP?" H 18250 1750 40  0000 L CNN
+F 1 "JUMPER3" H 18200 1950 40  0000 C CNN
+F 2 "~" H 18200 1850 60  0000 C CNN
+F 3 "~" H 18200 1850 60  0000 C CNN
+	1    18200 1850
 	0    -1   -1   0   
 $EndComp
-$Comp
-L R R21
-U 1 1 554BA797
-P 5750 10200
-F 0 "R21" V 5830 10200 40  0000 C CNN
-F 1 "R" V 5757 10201 40  0000 C CNN
-F 2 "~" V 5680 10200 30  0000 C CNN
-F 3 "~" H 5750 10200 30  0000 C CNN
-	1    5750 10200
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
-	5400 10000 5500 10000
+	17800 1850 17750 1850
+Text GLabel 17750 1650 0    60   Input ~ 0
+SR_Input_conn
 Wire Wire Line
-	5400 10200 5500 10200
+	17800 1850 17800 2150
 Wire Wire Line
-	6000 10200 6150 10200
+	17800 2150 18200 2150
 Wire Wire Line
-	6150 10200 6150 9950
+	18200 2150 18200 2100
 Wire Wire Line
-	6000 10000 6150 10000
-Connection ~ 6150 10000
-$Comp
-L +5V #PWR49
-U 1 1 554BB170
-P 6150 9950
-F 0 "#PWR49" H 6150 10040 20  0001 C CNN
-F 1 "+5V" H 6150 10040 30  0000 C CNN
-F 2 "~" H 6150 9950 60  0000 C CNN
-F 3 "~" H 6150 9950 60  0000 C CNN
-	1    6150 9950
-	1    0    0    -1  
-$EndComp
+	18200 1600 18200 1550
+Wire Wire Line
+	18200 1550 17950 1550
+Wire Wire Line
+	17950 1550 17950 1650
+Wire Wire Line
+	17950 1650 17750 1650
 $EndSCHEMATC
